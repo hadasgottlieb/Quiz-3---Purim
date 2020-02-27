@@ -70,6 +70,7 @@ function startQuiz() {
     $("#start-button").on("click", function() {
         $("#opening-container").hide();
         $("#quiz-container").removeClass("hide-on-start");
+        $("#next-button").hide();
 
         buildQuiz();
     });
@@ -101,6 +102,8 @@ function submitAnswer() {
 
     $("#submit-button").on("click", function() {
         $("#submit-button").hide();
+        $("#next-button").show();
+        $("#output").show();
         let userGuess = $("input:checked").val();
         if (userGuess) {
             if (userGuess === STORE.questions[STORE.currentQuestionIndex].correctAnswer) {
@@ -116,6 +119,18 @@ function submitAnswer() {
 //This function listens for the Next button, renders next question
 function nextQuestion() {
     console.log("function nextQuestion ran.");
+
+    $("#next-button").on("click", function() {
+        STORE.currentQuestionIndex++
+        $("#output").hide();
+        $("#next-button").hide();
+        $("#submit-button").show();
+        if (STORE.currentQuestionIndex < STORE.questions.length) {
+            buildQuiz();
+        } else {
+            buildResults();
+        }
+    });
 }
 
 //This function builds the results page
