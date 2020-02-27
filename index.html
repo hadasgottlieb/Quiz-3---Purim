@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Connect to CSS file -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- This application: A quiz on Purim. Quiz begins with opening div introducing the quiz. Below that is button that when pressed, starts the quiz. Question, 4 choices, Submit button. When choice is made and submit button is pressed - if answer is correct, say correct. If answer is incorrect, say incorrect, and give correct answer. After Submit button is pressed, Next button appears. Press Next to go to next question. If no more questions, display results of quiz, and Start Over button. -->
+
+    <div id = "opening-container">
+        <h1>What do you know about Purim?</h1>
+        <button id="start-button">Start</button>
+    </div>
+    <div id = "quiz-container" class = "hide-on-start">
+        <div id = "question-container">
+
+        </div>
+        <div id = "options-container">
+
+        </div>
+        <button>Submit</button>
+        <button>Next</button>
+    </div>
+    <div id = "results-container" class = "hide-on-start">
+        <h2></h2>
+        <button>Start Over</button>
+    
+    </div>
+    <!-- Connect to JS file -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src = "index.js"></script>
+</body>
+</html>
