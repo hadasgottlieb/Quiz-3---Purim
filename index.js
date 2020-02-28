@@ -69,7 +69,8 @@ function startQuiz() {
 
     $("#start-button").on("click", function() {
         $("#opening-container").hide();
-        $("#quiz-container").removeClass("hide-on-start");
+        // $("#quiz-container").removeClass("hide-on-start");
+        $("#quiz-container").show();
         $("#next-button").hide();
 
         buildQuiz();
@@ -101,17 +102,20 @@ function submitAnswer() {
     console.log("function submitAnswer ran.");
 
     $("#submit-button").on("click", function() {
-        $("#submit-button").hide();
-        $("#next-button").show();
         $("#output").show();
         let userGuess = $("input:checked").val();
         if (userGuess) {
+            $("#submit-button").hide();
+            $("#next-button").show();
+            
             if (userGuess === STORE.questions[STORE.currentQuestionIndex].correctAnswer) {
                 $("#output").text(`Correct!`);
                 STORE.correctCount++;
             } else {
                 $("#output").text(`Incorrect. The correct answer is "${STORE.questions[STORE.currentQuestionIndex].correctAnswer}".`);
             }
+        } else {
+            $("#output").text(`Please choose an answer.`)
         }
     });
 }
@@ -137,11 +141,23 @@ function nextQuestion() {
 function buildResults() {
     console.log("function buildResults ran.");
 
+    $("#quiz-container").hide();
+    $("#results-container").show();
+    $("#score").text(`Your score is ${STORE.correctCount}/${STORE.questions.length}.`)
+
 }
 
 //This function listens for the Start-Over button, starts the Quiz over
 function startOver() {
     console.log("function startOver ran.")
+      $("#restart").on("click", function() {
+        $("#opening-container").show();
+        STORE.currentQuestionIndex = 0;
+        $("#quiz-container").hide();
+        $("#results-container").hide();
+      })
+    
+    
 }
 
 //This function renders the whole page
