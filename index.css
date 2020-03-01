@@ -5,8 +5,34 @@
 body {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    text-align: center;
+    /* margin: auto;
+    text-align: center; */
+}
+
+#outer-container {
+    width: 50%;
+    /* height: 80%; */
+    margin: 50px 0 0 50px;
+    border: 1px solid black;
+    background: url('https://www.tabletmag.com/wp-content/uploads/2020/02/mordechai-curtain.jpg');
+   
+    background-size: cover;
+}
+
+.container {
+    margin: 50px 0 50px 50px;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+}
+
+#eachQuestion {
+    padding: 10px;
+}
+
+.button {
+    background-color: none;
+
 }
 
 .hide-on-start {

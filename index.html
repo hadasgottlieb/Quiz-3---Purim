@@ -9,26 +9,27 @@
 </head>
 <body>
     <!-- This application: A quiz on Purim. Quiz begins with opening div introducing the quiz. Below that is button that when pressed, starts the quiz. Question, 4 choices, Submit button. When choice is made and submit button is pressed - if answer is correct, say correct. If answer is incorrect, say incorrect, and give correct answer. After Submit button is pressed, Next button appears. Press Next to go to next question. If no more questions, display results of quiz, and Start Over button. -->
-
-    <div id = "opening-container">
-        <h1>What do you know about Purim?</h1>
-        <button id="start-button">Start</button>
-    </div>
-    <div id = "quiz-container" class = "hide-on-start">
-        <div id = "question-container">
-
+    <div id = "outer-container">
+        <div id = "opening-container" class = "container">
+            <h1>What do you know about Purim?</h1>
+            <button id="start-button" class = "button">Start</button>
         </div>
-        <div id = "options-container">
+        <div id = "quiz-container" class = "hide-on-start container">
+            <div id = "question-container">
 
+            </div>
+            <div id = "options-container">
+
+            </div>
+            <button id = "submit-button" class = "button">Submit</button>
+            <p id = "output"></p>
+            <button id = "next-button" class = "button">Next</button>
         </div>
-        <button id = "submit-button">Submit</button>
-        <p id = "output"></p>
-        <button id = "next-button">Next</button>
-    </div>
-    <div id = "results-container" class = "hide-on-start">
-        <h2 id = "score"></h2>
-        <button id = "restart">Start Over</button>
-    
+        <div id = "results-container" class = "hide-on-start container">
+            <h2 id = "score"></h2>
+            <button id = "restart" class = "button">Start Over</button>
+        
+        </div>
     </div>
     <!-- Connect to JS file -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>

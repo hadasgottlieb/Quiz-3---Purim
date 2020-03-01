@@ -87,7 +87,7 @@ function buildQuiz() {
     $("#question-container").html(`<h2>${currentQ.questionNumber}. ${currentQ.question}</h2>`);
     currentQ.options.forEach(function(option) {
         $("#options-container").append(`
-        <div>
+        <div id = "eachQuestion">
             <label>
                 <input type = "radio" name = "radio" value = "${option}" >
                 <span>${option}</span>
