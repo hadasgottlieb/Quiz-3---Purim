@@ -153,6 +153,7 @@ function startOver() {
       $("#restart").on("click", function() {
         $("#opening-container").show();
         STORE.currentQuestionIndex = 0;
+        STORE.correctCount = 0;
         $("#quiz-container").hide();
         $("#results-container").hide();
       })
